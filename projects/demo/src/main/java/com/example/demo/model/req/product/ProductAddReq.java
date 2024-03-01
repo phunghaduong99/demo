@@ -4,8 +4,12 @@ import com.example.demo.entity.enumration.Gender;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Data
 public class ProductAddReq {
+
+    private Long productCode;
 
     private String name;
 
@@ -13,7 +17,7 @@ public class ProductAddReq {
 
     private Float presentPrice;
 
-    private String image;
+    private List<String> images;
 
     private Float discount;
 
@@ -23,7 +27,7 @@ public class ProductAddReq {
 
     private Gender gender;
 
-    private String placeCode;
+    private String placeValue;
 
-    private String categoryCode;
+    private String categoryValue;
 }

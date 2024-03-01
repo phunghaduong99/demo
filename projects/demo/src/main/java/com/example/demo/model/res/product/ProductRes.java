@@ -1,9 +1,13 @@
 package com.example.demo.model.res.product;
 
+import com.example.demo.entity.Image;
 import com.example.demo.entity.enumration.Gender;
 import com.example.demo.model.res.category.CategoryRes;
+import com.example.demo.model.res.image.ImageRes;
 import com.example.demo.model.res.place.PlaceRes;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class ProductRes {
@@ -14,7 +18,7 @@ public class ProductRes {
 
     private Float presentPrice;
 
-    private String image;
+    private List<ImageRes> images;
 
     private Float discount;
 

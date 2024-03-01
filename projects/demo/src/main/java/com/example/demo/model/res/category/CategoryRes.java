@@ -4,6 +4,5 @@ import lombok.Data;
 
 @Data
 public class CategoryRes {
-    private String code;
     private String value;
 }

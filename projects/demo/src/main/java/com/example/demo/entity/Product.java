@@ -41,4 +41,7 @@ public class Product extends BaseEntity{
 
     @ManyToOne
     private Place place;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<Image> images;
 }

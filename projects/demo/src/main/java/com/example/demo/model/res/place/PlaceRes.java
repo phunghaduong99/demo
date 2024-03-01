@@ -4,6 +4,5 @@ import lombok.Data;
 
 @Data
 public class PlaceRes {
-    private String code;
     private String value;
 }
