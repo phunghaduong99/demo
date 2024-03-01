@@ -1,9 +1,7 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import com.example.demo.entity.enumration.Status;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
@@ -13,9 +11,13 @@ import java.util.List;
 @Data
 public class Place extends BaseEntity{
 
-    @Column(name = "code")
+    @Column(name = "code", unique = true)
     private String code;
 
     @Column(name = "value")
     private String value;
+
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }

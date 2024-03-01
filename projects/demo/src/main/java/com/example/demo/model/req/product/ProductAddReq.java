@@ -1,33 +1,46 @@
 package com.example.demo.model.req.product;
 
 import com.example.demo.entity.enumration.Gender;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
 @Data
 public class ProductAddReq {
 
-    private Long productCode;
-
+    @NotBlank(message = "name is not null or empty")
     private String name;
 
+    @NotNull(message = "rootPrice is not null")
+    @Min(message = "rootPrice must > 0", value = 0)
     private Float rootPrice;
 
+    @NotNull(message = "presentPrice is not null")
+    @Min(message = "presentPrice must > 0", value = 0)
     private Float presentPrice;
 
+    @NotNull(message = "images is not null")
     private List<String> images;
 
+    @NotNull(message = "discount is not null")
+    @Min(message = "discount must > 0", value = 0)
     private Float discount;
 
+    @NotBlank(message = "color is not null or empty")
     private String color;
 
+    @NotBlank(message = "description is not null or empty")
     private String description;
 
+    @NotNull(message = "gender is not null")
     private Gender gender;
 
-    private String placeValue;
+    @NotBlank(message = "placeCode is not null or empty")
+    private String placeCode;
 
-    private String categoryValue;
+    @NotBlank(message = "categoryCode is not null or empty")
+    private String categoryCode;
 }

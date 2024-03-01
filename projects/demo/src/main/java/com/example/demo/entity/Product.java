@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import com.example.demo.entity.enumration.Gender;
+import com.example.demo.entity.enumration.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -42,6 +43,13 @@ public class Product extends BaseEntity{
     @ManyToOne
     private Place place;
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<Image> images;
+
+    @ManyToOne
+    private Shop shop;
 }

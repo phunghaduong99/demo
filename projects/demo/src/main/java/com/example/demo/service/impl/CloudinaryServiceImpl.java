@@ -13,8 +13,10 @@ import java.util.Map;
 
 @Service
 public class CloudinaryServiceImpl implements CloudinaryService {
+
     @Resource
     private Cloudinary cloudinary;
+
     @Override
     public String uploadFile(MultipartFile file, String folderName) {
         try{
