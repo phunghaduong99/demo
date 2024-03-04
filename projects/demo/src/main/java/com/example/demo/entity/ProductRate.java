@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import com.example.demo.entity.composite.UserProductKey;
+import com.example.demo.entity.user.Customer;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,7 +16,7 @@ public class ProductRate {
     @ManyToOne
     @MapsId("userId")
     @JoinColumn(name="user_id")
-    private User user;
+    private Customer user;
 
     @ManyToOne
     @MapsId("productId")

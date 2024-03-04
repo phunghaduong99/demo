@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.example.demo.entity.user.Seller;
 import jakarta.persistence.*;
 import lombok.Data;
 
