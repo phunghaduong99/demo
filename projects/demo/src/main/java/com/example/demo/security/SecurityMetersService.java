@@ -2,6 +2,7 @@ package com.example.demo.security;
 
 import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.MeterRegistry;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,7 +18,7 @@ public class SecurityMetersService {
     private final Counter tokenExpiredCounter;
     private final Counter tokenUnsupportedCounter;
     private final Counter tokenMalformedCounter;
-
+    @Autowired
     public SecurityMetersService(MeterRegistry registry) {
         this.tokenInvalidSignatureCounter = invalidTokensCounterForCauseBuilder("invalid-signature").register(registry);
         this.tokenExpiredCounter = invalidTokensCounterForCauseBuilder("expired").register(registry);
